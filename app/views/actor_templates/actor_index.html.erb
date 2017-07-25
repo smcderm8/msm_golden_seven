@@ -1,0 +1,31 @@
+<h1>All Actors</h1>
+
+<a href="/actors/new">
+  Add a new actor
+</a>
+
+ 
+ <% @home.each do |actor| %>
+   
+   <div class="thumbnail">
+    <img src="<%= actor.image_url %>">
+
+    <div class="caption">
+        
+        <h5><%= actor.name %></h5>
+        
+      <a href="/actors/<%= actor.id %>" class="btn btn-default btn-block">
+        Show Details
+      </a>
+
+      <a href="/actors/<%= actor.id %>/edit" class="btn btn-default btn-block">
+        Edit
+      </a>
+
+      <a href="/delete_actor/<%= actor.id %>" class="btn btn-default btn-block">
+        Delete
+      </a>
+    </div>
+  </div>
+  
+  <% end %>
