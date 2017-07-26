@@ -1,7 +1,7 @@
 <h1>All Actors</h1>
 
 <a href="/actors/new">
-  Add a new actor
+  Create actor
 </a>
 
  
@@ -13,6 +13,14 @@
     <div class="caption">
         
         <h5><%= actor.name %></h5>
+        
+        <p>
+          <%= actor.bio %>
+        </p>
+        
+        <p>
+          <%= actor.dob %>
+        </p>
         
       <a href="/actors/<%= actor.id %>" class="btn btn-default btn-block">
         Show Details
