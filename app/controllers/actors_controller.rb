@@ -27,7 +27,7 @@ class ActorsController < ApplicationController
     
     def show
         
-        @pic = Photo.find(params["the_id"])
+        @actor = Actor.find(params["the_id"])
         
         render("actor_templates/actor_show.html.erb")
     end
@@ -35,23 +35,25 @@ class ActorsController < ApplicationController
     def edit_form
         # Parameters: {"an_id"=>""}
         
-        @pic = Photo.find(params["an_id"])
+        @actor = Actor.find(params["an_id"])
         
         render("actor_templates/actor_edit_form.html.erb")
     end
     
     def update_row
         
-        #Parameters: {"the_source"=>"", "the_caption"=>"", "some_id"=>""}
+        #Parameters: {"actor_name"=>"", "actor_bio"=>"", "actor_dob"=>"", "actor_image"=>"", "some_id"=>""}
         
-        @pic = Photo.find(params["some_id"])
-        @pic.source = params["the_source"]
-        @pic.caption = params["the_caption"]
-        @pic.save
+        @actor = Actor.find(params["some_id"])
+        @actor.name = params["actor_name"]
+        @actor.bio = params["actor_bio"]
+        @actor.dob = params["actor_dob"]
+        @actor.image_url = params["actor_image"]
+        @actor.save
         
-        @pic_id = @pic.id
+        @actor_id = @actor.id
         
-        redirect_to("/photos/#{@pic_id}")
+        redirect_to("/actors/#{@actor_id}")
         
         #render("actor_templates/actor_update_row.html.erb")
     end
