@@ -1,0 +1,47 @@
+<h1>All Movies</h1>
+
+<a href="/movies/new">
+  Add a new movie
+</a>
+
+ 
+ <% @home.each do |movie| %>
+   
+   <div class="thumbnail">
+    <img src="<%= movie.image_url %>">
+
+    <div class="caption">
+        
+        <h5><%= movie.title %></h5>
+        
+        <p>
+          <%= movie.image_url %>
+        </p>
+        
+        <p>
+          <%= movie.year %>
+        </p>
+        
+        <p>
+          <%= movie.duration %>
+        </p>
+        
+        <p>
+          <%= movie.description %>
+        </p>
+        
+      <a href="/movies/<%= movie.id %>" class="btn btn-default btn-block">
+        Show details
+      </a>
+
+      <a href="/movies/<%= movie.id %>/edit" class="btn btn-default btn-block">
+        Edit movie
+      </a>
+
+      <a href="/delete_movie/<%= movie.id %>" class="btn btn-default btn-block">
+        Delete movie
+      </a>
+    </div>
+  </div>
+  
+  <% end %>

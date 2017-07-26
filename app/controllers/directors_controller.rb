@@ -20,7 +20,7 @@ class DirectorsController < ApplicationController
     
     def index
         
-        @home = Director.all.order(:updated_at => :desc)
+        @home = Director.all
         
         render("director_templates/director_index.html.erb")
     end
