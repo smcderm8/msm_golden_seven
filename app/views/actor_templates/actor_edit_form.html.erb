@@ -6,7 +6,7 @@
       Actor Name
     </label>
 
-    <textarea id="actor_name_input" type="text" name="actor_name"><%= @actor.name%></textarea>
+    <input id="actor_name_input" type="text" name="actor_name" value="<%= @actor.name%>">
   </div>
 
   <div>
@@ -22,7 +22,7 @@
       Dob
     </label>
 
-    <textarea id="dob_input" type="text" name="actor_dob"><%= @actor.dob%></textarea> 
+    <input id="dob_input" type="text" name="actor_dob" value="<%= @actor.dob%>"> 
   </div>
   
   <div>
@@ -30,7 +30,7 @@
       Image url
     </label>
 
-    <textarea id="image_input" type="text" name="actor_image"><%= @actor.image_url%></textarea>
+    <input id="image_input" type="text" name="actor_image" value="<%= @actor.image_url%>">
   </div>
 
   <button>
